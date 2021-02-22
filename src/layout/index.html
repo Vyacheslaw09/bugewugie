@@ -21,7 +21,7 @@ ul {
 ul li {
   cursor: pointer; /* курсор мыши при наведении */
   position: relative; /* позиция */
-  padding: 12px 8px 12px 40px; /* зажаем размеры */
+  padding: 12px 8px 12px 40px; /* задаем размеры */
   background: #eee; /* задний фон задаем */
   font-size: 18px;
   transition: 0.4s;
@@ -112,7 +112,7 @@ input {
 }
 
 .addBtn:hover {
-  background-color: #bbb;
+background-color: #bbb;
 }
 </style>
 <!-- input type="text" - используется для того, чтобы задать текстовое поле -->
@@ -120,15 +120,79 @@ input {
 <center><input type="text" id="myInput" placeholder="Enter text here..."></center>
   <!-- newelement - функция которая будет добавлять новые элементы по нажатию -->
   <!-- addBtn - кнопка при нажатии которой задается новое событие -->
-<center><span onclick="newElement()" class="addBtn">Add note</span></center> 
+<span onclick="newElement()" class="addBtn">Add note</span>
 </div>
 <!-- onclick - кнопка, для клика по отдельному событию -->
 <!-- myUL - мой список для списка -->
 <ul onclick="click()" id="myUL">
 <!-- Добавим одно событие для примера -->
 <!-- li - для создания элемента списка -->
-<li>Buy an apples</li>
+<li class> Buy an apples
+</li>
 </ul>
+
+
+<script type="text/javascript" src="/scripts/index.js"></script>
+<script>
+// создание кнопки 'х - то то есть закрыть' и добавление ее к каждомуу новому событию
+var mytodolist=document.getElementsByTagName("li"); // находим элементы с тегом "li"
+var i;
+// создаем условия переменной i
+for (i = 0; i < mytodolist.length; i++) {
+var span=document.createElement("SPAN"); // создание спец параметров для иконки Х
+var txt=document.createTextNode("\u00D7"); // создание иконки Х
+span.classname="close"; // функция закрыть
+span.appendchild(txt);
+mytodolist[i].appendChild(span); // как я понял это задать параметры определенной кнопке Х, если правильно написал код
+}
+
+// функция нажатия на кнопку Х чтобы завершить событие
+var close = document.getElementsByClassName("close"); // т.о. получим доступ к кнопке Закрыть
+var i;
+for (i = 0; i < close.length; i++) {
+close[i].onclick = function() {
+var div = this.parentElement;
+div.style.display = "none";
+  }
+}
+
+// добавление зачеркнутого стиля при нажатии на событие из списка
+var list = document.querySelector('ul');
+// добавим строке снизу функции для клика, т.е. Тип события - клик, функция которая будет и фаза
+list.addEventListener('click', function(ev) {
+if (event.target.tagName === 'LI') { // если мы нажимаем на событие из списка
+event.target.classlist.toggle('checked'); // то событие принимает стиль "зачеркнутый", но я могу изменить параметры, на то что цвет заверш. события на красный будет меняться
+ }
+}, false); // и если не нажать, то функция работать не будет
+
+// создание нового события из списка при нажатии на кнопку add note
+function newElement() {
+var li = document.createElement("li");
+var inputValue = document.getElementById("myInput").value;
+var t = document.createTextNode(inputValue);
+li.appendChild(t);
+if (inputValue == '') {
+alert("Enter text...");
+  } else {
+   document.getElementById("myUL").appendChild(li);
+  }
+ document.getElementById("myInput").value = "";
+
+var span = document.createElement("SPAN");
+var txt = document.createTextNode("\u00D7");
+span.className = "close";
+span.appendChild(txt);
+li.appendChild(span);
+
+for (i = 0; i < close.length; i++) {
+close[i].onclick = function() {
+var div = this.parentElement;
+div.style.display = "none";
+ }
+  }
+
+}
+  </script>
 </body>
 </head>
 </html>
