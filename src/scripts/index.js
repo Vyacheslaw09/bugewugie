@@ -20,15 +20,6 @@ div.style.display = "none";
   }
 }
 
-// добавление зачеркнутого стиля при нажатии на событие из списка
-var list = document.querySelector('ul');
-// добавим строке снизу функции для клика, т.е. Тип события - клик, функция которая будет и фаза
-list.addEventListener('click', function(ev) {
-if (event.target.tagName === 'LI') { // если мы нажимаем на событие из списка
-event.target.classlist.toggle('checked'); // то событие принимает стиль "зачеркнутый", но я могу изменить параметры, на то что цвет заверш. события на красный будет меняться
- }
-}, true); // и если не нажать, то функция работать не будет
-
 // создание нового события из списка при нажатии на кнопку add note
 function newElement() {
 var li = document.createElement("li");
@@ -36,7 +27,7 @@ var inputValue = document.getElementById("myInput").value;
 var t = document.createTextNode(inputValue);
 li.appendChild(t);
 if (inputValue == '') {
-alert("Enter text...");
+alert("Введите текст");
   } else {
    document.getElementById("myUL").appendChild(li);
   }
