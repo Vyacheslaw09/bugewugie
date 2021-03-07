@@ -1,11 +1,13 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
 <body>
 <!-- class="header" - задает шапку в разделе, где располагается выделенный заголовок -->
 <div id="myDIV" class="header">
-<title>TODOapp</title>
-<center><h2>TO-DO List</h2></center>
+	<title>TODOapp</title>
+<center>
+	<h2>TO-DO List</h2>
+</center>
 
 <style type="text/css">
 /* (*) - для того чтобы задать всем элементам схожие параметры */
@@ -39,7 +41,6 @@ ul li:nth-child(odd) {
 ul li:hover {
   background: #ddd;
 }
-
 
 .close {
   position: absolute;
@@ -98,7 +99,9 @@ background-color: #bbb;
 </style>
 <!-- input type="text" - используется для того, чтобы задать текстовое поле -->
 <!-- placeholder - для подсказки куда писать текст -->
-<center><input type="text" id="myInput" placeholder="Enter text here..."></center>
+<center>
+	<input type="text" id="myInput" placeholder="Enter text here...">
+</center>
   <!-- newelement - функция которая будет добавлять новые элементы по нажатию -->
   <!-- addBtn - кнопка при нажатии которой задается новое событие -->
 <span onclick="newElement()" class="addBtn">Add note</span>
@@ -108,7 +111,6 @@ background-color: #bbb;
 <ul id="myUL">
 </ul>
 
-<script type="text/javascript"></script>
 <script src="../scripts/index.js"></script>
 
 </body>

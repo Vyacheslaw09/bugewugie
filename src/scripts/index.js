@@ -1,3 +1,4 @@
+function close(){
 // создание кнопки 'х - то то есть закрыть' и добавление ее к каждомуу новому событию
 var mytodolist=document.getElementsByTagName("li"); // находим элементы с тегом "li"
 var i;
@@ -9,7 +10,9 @@ span.classname="close"; // функция закрыть
 span.appendchild(txt);
 mytodolist[i].appendChild(span); // как я понял это задать параметры определенной кнопке Х, если правильно написал код
 }
+}
 
+close();
 // функция нажатия на кнопку Х чтобы завершить событие
 var close = document.getElementsByClassName("close"); // т.о. получим доступ к кнопке Закрыть
 var i;
