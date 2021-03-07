@@ -108,54 +108,8 @@ background-color: #bbb;
 <ul id="myUL">
 </ul>
 
-<script type="text/javascript" src="/scripts/index.js"></script>
-<script>
-
-var mytodolist=document.getElementsByTagName("li"); 
-var i;
-for (i = 0; i < mytodolist.length; i++) {
-var span=document.createElement("SPAN"); // создание спец параметров для иконки Х
-var txt=document.createTextNode("\u00D7"); // создание иконки Х
-span.classname="close"; // функция закрыть
-span.appendchild(txt);
-mytodolist[i].appendChild(span);
-}
-
-var close = document.getElementsByClassName("close"); 
-for (i = 0; i < close.length; i++) {
-close[i].onclick = function() {
-var div = this.parentElement;
-div.style.display = "none";
-  }
-}
-
-function newElement() {
-var li = document.createElement("li");
-var inputValue = document.getElementById("myInput").value;
-var t = document.createTextNode(inputValue);
-li.appendChild(t);
-if (inputValue == '') {
-alert("Введите текст");
-  } else {
-   document.getElementById("myUL").appendChild(li);
-  }
- document.getElementById("myInput").value = "";
-
-var span = document.createElement("SPAN");
-var txt = document.createTextNode("\u00D7");
-span.className = "close";
-span.appendChild(txt);
-li.appendChild(span);
-
-for (i = 0; i < close.length; i++) {
-close[i].onclick = function() {
-var div = this.parentElement;
-div.style.display = "none";
- }
-}
-}
-
-</script>
+<script type="text/javascript"></script>
+<script src="../scripts/index.js"></script>
 
 </body>
 </head>
