@@ -4,9 +4,9 @@ var mytodolist=document.getElementsByTagName("li"); // находим элеме
 var i;
 // создаем условия переменной i
 for (i = 0; i < mytodolist.length; i++) {
-var span=document.createElement("SPAN"); // создание спец параметров для иконки Х
+var span=document.createElement("SPAN");
 var txt=document.createTextNode("\u00D7"); // создание иконки Х
-span.classname="close"; // функция закрыть
+span.classname="close";
 span.appendchild(txt);
 mytodolist[i].appendChild(span); // как я понял это задать параметры определенной кнопке Х, если правильно написал код
 }
@@ -25,6 +25,7 @@ div.style.display = "none";
 
 // создание нового события из списка при нажатии на кнопку add note
 function newElement() {
+var user = {id:0, name:'vyacheslaw', date:}	
 var li = document.createElement("li");
 var inputValue = document.getElementById("myInput").value;
 var t = document.createTextNode(inputValue);
